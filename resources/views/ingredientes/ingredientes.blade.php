@@ -17,11 +17,12 @@
                <div class="container mt-5">
                     <form action="" method="GET">
                         <div class="form-group">
-                            <input name="plato_nombre" type="text" class="form-control mt-2 col-5" placeholder="Nombre del Plato" >
-                            <input name="plato_valor" type="number" class="form-control mt-2 col-5" placeholder="Valor del Plato" >
-                            <button type="submit" class="btn btn-primary mt-2">Guardar Plato</button>
+                            <input name="ingrediente_nombre" type="text" class="form-control mt-2 col-5" placeholder="Nombre del Ingrediente" >
+                            <input name="ingrediente_proveedor" type="text" class="form-control mt-2 col-5" placeholder="Nombre del Proveedor" >
+                            <button type="submit" class="btn btn-primary mt-2">Guardar Ingrediente</button>
                         </div>
                     </form>
+                <a href="/ingredientes/index"> Ver todos los Ingredientes</a>
                 </div>
             @endsection   
        

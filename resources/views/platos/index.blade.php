@@ -8,25 +8,36 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        @section('title' , "Ingredientes")
+        @section('title' , "Todo los Platos")
 
     </head>
     <body>
             @extends('layout') 
             @section('content')
                <div class="container mt-5">
-                    <form action="" method="GET">
-                        <div class="form-group">
-                            <input name="fecha_orden" type="date" class="form-control mt-2 col-5" placeholder="Fecha de la Orden" >
-                            <input name="numMesa_orden" type="number" class="form-control mt-2 col-5" placeholder="Numero de la Mesa" >
-                            <select name="select_estado" id="" class="form-control mt-2 col-5">
-                                <option value="N">N</option>
-                                <option value="C">C</option>
-                            </select>
-                            <button type="submit" class="btn btn-primary mt-2">Registrar Orden</button>
-                        </div>
-                    </form>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($platos as $plato)
+                            <tr>
+                            <th>{{$plato->codigo}}</th>
+                            <td>{{$plato->nombre}}</td>
+                            <td>{{$plato->valor}}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                    <a href="/platos">Volver a Registro de platos</a>
                 </div>
+
+                
             @endsection   
        
     </body>

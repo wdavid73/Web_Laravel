@@ -16,13 +16,13 @@ Route::get('/', function () {
 })->name('Home');
 
 //Ruta de Ingredientes
-
+Route::get('/ingredientes/index' , 'IngredientesController@index');
 Route::get('/ingredientes' , 'IngredientesController@store');
 
 //Ruta de Platos
-
+Route::get('/platos/index' , 'PlatosController@index');
 Route::get('/platos' , 'PlatosController@store');
 
 //controlador de ordenes
-
+Route::get('/ordenes/index' , 'OrdenesController@index');
 Route::get('/ordenes' , 'OrdenesController@store');

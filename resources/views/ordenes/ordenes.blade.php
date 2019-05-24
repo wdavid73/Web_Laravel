@@ -17,11 +17,16 @@
                <div class="container mt-5">
                     <form action="" method="GET">
                         <div class="form-group">
-                            <input name="ingrediente_nombre" type="text" class="form-control mt-2 col-5" placeholder="Nombre del Ingrediente" >
-                            <input name="ingrediente_proveedor" type="text" class="form-control mt-2 col-5" placeholder="Nombre del Proveedor" >
-                            <button type="submit" class="btn btn-primary mt-2">Guardar Ingrediente</button>
+                            <input name="fecha_orden" type="date" class="form-control mt-2 col-5" placeholder="Fecha de la Orden" >
+                            <input name="numMesa_orden" type="number" class="form-control mt-2 col-5" placeholder="Numero de la Mesa" >
+                            <select name="select_estado" id="" class="form-control mt-2 col-5">
+                                <option value="N">N</option>
+                                <option value="C">C</option>
+                            </select>
+                            <button type="submit" class="btn btn-primary mt-2">Registrar Orden</button>
                         </div>
                     </form>
+                    <a href="/ordenes/index"> Todas las Ordenes</a>
                 </div>
             @endsection   
        

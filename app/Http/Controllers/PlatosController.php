@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Plato;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PlatosController extends Controller
 {
@@ -13,7 +15,9 @@ class PlatosController extends Controller
      */
     public function index()
     {
-        //
+        $platos = DB::table('platos')->get();
+
+        return view('platos.index' , compact('platos'));
     }
 
     /**
@@ -34,7 +38,7 @@ class PlatosController extends Controller
      */
     public function store(Request $request)
     {
-        return view('platos');
+        return view('platos.platos');
     }
 
     /**

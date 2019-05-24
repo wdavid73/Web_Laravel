@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Orden;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OrdenesController extends Controller
 {
@@ -13,7 +15,9 @@ class OrdenesController extends Controller
      */
     public function index()
     {
-        //
+
+        $ordenes = DB::table('ordenes')->get();
+        return view('ordenes.index' , compact('ordenes'));
     }
 
     /**
@@ -34,7 +38,7 @@ class OrdenesController extends Controller
      */
     public function store(Request $request)
     {
-        return view('ordenes');
+        return view('ordenes.ordenes');
     }
 
     /**
