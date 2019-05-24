@@ -15,8 +15,14 @@ Route::get('/', function () {
     return view('home');
 })->name('Home');
 
+//Ruta de Ingredientes
+
 Route::get('/ingredientes' , 'IngredientesController@store');
 
-//controlador de platos
+//Ruta de Platos
+
+Route::get('/platos' , 'PlatosController@store');
 
 //controlador de ordenes
+
+Route::get('/ordenes' , 'OrdenesController@store');
