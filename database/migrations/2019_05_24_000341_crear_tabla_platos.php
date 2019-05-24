@@ -15,6 +15,7 @@ class CrearTablaPlatos extends Migration
     {
        if(!Schema::hasTable('platos')){
            Schema::create('platos' , function(Blueprint $table){
+               //Campos Basicos
                $table->bigIncrements('codigo');
                $table->char('nombre' , 50);
                $table->double('valor');

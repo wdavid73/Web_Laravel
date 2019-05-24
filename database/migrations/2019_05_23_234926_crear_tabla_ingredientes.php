@@ -14,6 +14,7 @@ class CrearTablaIngredientes extends Migration
     public function up()
     {
         Schema::create('ingredientes' , function (Blueprint $table){
+           //Campos Basicos
             $table->increments('codigo');
             $table->char('nombre' , 50);
             $table->char('proveedor' , 50);

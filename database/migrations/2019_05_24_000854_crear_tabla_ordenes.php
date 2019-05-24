@@ -15,6 +15,7 @@ class CrearTablaOrdenes extends Migration
     {
         if(!Schema::hasTable('ordenes')){
             Schema::create('ordenes' , function (Blueprint $table){
+                //Campos Basicos
                 $table->bigIncrements('numero');
                 $table->date('fecha');
                 $table->integer('numMesa');
