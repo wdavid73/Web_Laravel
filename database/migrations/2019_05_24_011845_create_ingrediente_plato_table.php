@@ -17,16 +17,25 @@ class CreateIngredientePlatoTable extends Migration
             $table->increments('id');
             
             //llave foranea de ingrediente codigo
-            $table->integer('ingrediente_codigo')->unsigned();
-            $table->foreign('ingrediente_codigo')->reference('codigo')->on('ingredientes');
+            $table->integer('ingrediente_codigo')
+                            ->unsigned()
+                            ->foreign('ingrediente_codigo')
+                            ->references('codigo')
+                            ->on('ingredientes');
+                            
 
             //llave foranea de plato codigo
-            $table->integer('plato_codigo')->unsigned();
-            $table->foreign('plato_codigo')->reference('codigo')->on('platos');
+            $table->integer('plato_codigo')
+                            ->unsigned()
+                            ->foreign('plato_codigo')
+                            ->references('codigo')
+                            ->on('platos');
 
-            $table->dobule('cantidad');
+            $table->double('cantidad');
             $table->timestamps();
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
