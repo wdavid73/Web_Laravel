@@ -11,7 +11,7 @@ class OrdenesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('ordenes')->truncate(); // vaciar la tabla
+        //DB::table('ordenes')->truncate(); // vaciar la tabla
 
         DB::table('ordenes')->insert([
             'fecha' => '2003-12-31',

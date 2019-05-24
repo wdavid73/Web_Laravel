@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaOrdenes extends Migration
+class CreateOrdenesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,7 +16,7 @@ class CrearTablaOrdenes extends Migration
         if(!Schema::hasTable('ordenes')){
             Schema::create('ordenes' , function (Blueprint $table){
                 //Campos Basicos
-                $table->bigIncrements('numero');
+                $table->increments('numero');
                 $table->date('fecha');
                 $table->integer('numMesa');
                 $table->char('estado' ,1);

@@ -12,9 +12,7 @@ class IngredienteSeeder extends Seeder
      */
     public function run()
     {
-
-        //DB::table('ingredientes')->truncate(); // vaciar la tabla
-
+        
         DB::table('ingredientes')->insert([
             'nombre' => 'Pan',
             'proveedor' => 'Jose'
