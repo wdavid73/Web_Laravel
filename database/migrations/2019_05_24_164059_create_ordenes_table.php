@@ -20,6 +20,7 @@ class CreateOrdenesTable extends Migration
                 $table->date('fecha');
                 $table->integer('numMesa');
                 $table->char('estado' ,1);
+                $table->timestamps();
             });
         }
     }

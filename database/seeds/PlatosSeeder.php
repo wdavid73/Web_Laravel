@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use \App\Models\Plato;
 
 class PlatosSeeder extends Seeder
 {
@@ -11,27 +12,30 @@ class PlatosSeeder extends Seeder
      */
     public function run()
     {
-        //DB::table('platos')->truncate();//vaciar tabla
 
+        /* insertar datos de ejemplo a la tabla con el constructor de consultas
         DB::table('platos')->insert([
             'nombre' => 'Perro Caliente',
             'valor' => '1500'
         ]); // inserta datos de prueba
-
+        */
         
-        DB::table('platos')->insert([
+        // insertar datos de ejemplo a la tabla con Eloquen ORM
+        Plato::create([
             'nombre' => 'Salchipapa',
             'valor' => '7000'
         ]); // inserta datos de prueba
-        
-        DB::table('platos')->insert([
+
+        Plato::create([
             'nombre' => 'Hamburgesa',
             'valor' => '1500'
         ]); // inserta datos de prueba
-        
-        DB::table('platos')->insert([
+
+        Plato::create([
             'nombre' => 'Pollo Asado',
             'valor' => '5000'
         ]); // inserta datos de prueba
+
+        factory(Plato::class)->times(15)->create();
     }
 }

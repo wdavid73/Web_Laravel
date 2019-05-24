@@ -18,6 +18,7 @@ class CreatePlatosTable extends Migration
             $table->increments('codigo');
             $table->char('nombre', 50)->unique();
             $table->double('valor');
+            $table->timestamps();
         });
     }
 
