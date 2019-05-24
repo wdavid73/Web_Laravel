@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaPlatos extends Migration
+class CreatePlatosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CrearTablaPlatos extends Migration
      */
     public function up()
     {
-       if(!Schema::hasTable('platos')){
-           Schema::create('platos' , function(Blueprint $table){
-               //Campos Basicos
-               $table->bigIncrements('codigo');
-               $table->char('nombre' , 50);
-               $table->double('valor');
-           });
-       }
+        Schema::create('platos', function (Blueprint $table) {
+            //Campos Basicos
+            $table->increments('codigo');
+            $table->char('nombre', 50)->unique();
+            $table->double('valor');
+        });
     }
 
     /**

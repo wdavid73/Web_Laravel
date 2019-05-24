@@ -20,5 +20,6 @@ class Ingrediente_Plato_Seeder extends Seeder
             'plato_codigo' => '1',
             'cantidad' => '2',
         ]); // insertar datos de ejemplo
+    
     }
 }

@@ -11,7 +11,7 @@ class PlatosSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('platos')->truncate();//vaciar tabla
+        //DB::table('platos')->truncate();//vaciar tabla
 
         DB::table('platos')->insert([
             'nombre' => 'Perro Caliente',
