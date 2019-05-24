@@ -17,7 +17,7 @@ class CrearTablaIngredientes extends Migration
             Schema::create('ingredientes', function (Blueprint $table) {
                 //Campos Basicos
                 $table->bigIncrements('codigo');
-                $table->char('nombre', 50);
+                $table->char('nombre', 50)->unique();
                 $table->char('proveedor', 50);
                 $table->timestamps();
             });
