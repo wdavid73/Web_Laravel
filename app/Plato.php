@@ -8,7 +8,7 @@ class Plato extends Model
 {
 protected $fillable = ['nombre' , 'valor'];
     public function ingredientes(){
-        return $this->belongsToMany('App\Ingrediente');
+        return $this->belongsToMany('App\Ingrediente')->withTimestamps();
     }
     protected $table = "platos";
 }

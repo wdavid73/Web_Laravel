@@ -15,25 +15,18 @@ class CreateIngredientePlatoTable extends Migration
     {
         Schema::create('ingrediente_plato', function (Blueprint $table) {
             $table->increments('id');
-            
-            //llave foranea de ingrediente codigo
-            $table->integer('ingrediente_codigo')
-                            ->unsigned()
-                            ->foreign('ingrediente_codigo')
-                            ->references('codigo')
-                            ->on('ingredientes');
-                            
-
-            //llave foranea de plato codigo
-            $table->integer('plato_codigo')
-                            ->unsigned()
-                            ->foreign('plato_codigo')
-                            ->references('codigo')
-                            ->on('platos');
-
             $table->double('cantidad');
             $table->timestamps();
+
+            //llave foranea de ingrediente codigo
+            $table->unsignedInteger('ingrediente_codigo'); //parte 1
+            //llave foranea de plato codigo
+            $table->unsignedInteger('plato_codigo'); //parte 1
+            $table->foreign('ingrediente_codigo')->references('codigo')->on('ingredientes'); //parte 2
+            $table->foreign('plato_codigo')->references('codigo')->on('platos'); //parte 2
         });
+
+
 
         Schema::enableForeignKeyConstraints();
     }
