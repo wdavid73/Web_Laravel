@@ -17,11 +17,15 @@ class IngredientesController extends Controller
      */
     public function index()
     {
-        $ingredientes = DB::table('ingredientes')->get();
-
-        return view('ingredientes.index' ,compact('ingredientes'));
+        $ingredientes = Ingrediente::all();
+        //$ingredientes = DB::table('ingredientes')->get();
+        return view('ingredientes.index', compact('ingredientes'));
     }
 
+    public function principalView()
+    {
+        return view('ingredientes.ingredientes');
+    }
     /**
      * Show the form for creating a new resource.
      * 
@@ -31,8 +35,10 @@ class IngredientesController extends Controller
      */
     public function create()
     {
-        //
+        return view('ingredientes.create');
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -44,7 +50,17 @@ class IngredientesController extends Controller
      */
     public function store(Request $request)
     {
-        return view('ingredientes.ingredientes');
+
+        /*Forma 1*/
+        $data = $request->all();
+
+        Ingrediente::create([
+            'nombre' => $data['ingrediente_nombre'],
+            'proveedor' => $data['ingrediente_proveedor']
+        ]);
+        /*Forma 2*/
+
+        return redirect('/ingredientes/create');
     }
 
     /**

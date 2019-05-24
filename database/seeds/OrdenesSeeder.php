@@ -19,7 +19,7 @@ class OrdenesSeeder extends Seeder
             'estado' => 'N'
         ]);
        */
-      Orden::create([
+     /* Orden::create([
             'fecha' => '2003-12-31',
             'numMesa' => '1',
             'estado' => 'N'
@@ -46,7 +46,7 @@ class OrdenesSeeder extends Seeder
             'numMesa' => '5',
             'estado' => 'N'
         ]);
-
+*/
         factory(Orden::class)->times(10)->create();
     }
 }

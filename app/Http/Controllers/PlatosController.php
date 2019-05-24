@@ -15,9 +15,15 @@ class PlatosController extends Controller
      */
     public function index()
     {
-        $platos = DB::table('platos')->get();
+        $platos = Plato::all();
+        //$platos = DB::table('platos')->get();
 
         return view('platos.index' , compact('platos'));
+    }
+
+    public function principalView()
+    {
+        return view('platos.platos');
     }
 
     /**
@@ -27,7 +33,7 @@ class PlatosController extends Controller
      */
     public function create()
     {
-        //
+        return view('platos.create');
     }
 
     /**
@@ -38,7 +44,15 @@ class PlatosController extends Controller
      */
     public function store(Request $request)
     {
-        return view('platos.platos');
+        
+        $data = $request->all();
+
+        Plato::create([
+            'nombre' => $data['plato_nombre'],
+            'valor' => $data['plato_valor']
+        ]);
+
+        return redirect('/platos/create');
     }
 
     /**

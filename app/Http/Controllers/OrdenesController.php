@@ -16,7 +16,8 @@ class OrdenesController extends Controller
     public function index()
     {
 
-        $ordenes = DB::table('ordenes')->get();
+        $ordenes = Orden::all();
+        //$ordenes = DB::table('ordenes')->get();
         return view('ordenes.index' , compact('ordenes'));
     }
 
@@ -27,7 +28,11 @@ class OrdenesController extends Controller
      */
     public function create()
     {
-        //
+        return view('ordenes.create');
+    }
+
+    public function principalView(){
+        return view('ordenes.ordenes');
     }
 
     /**
@@ -38,7 +43,15 @@ class OrdenesController extends Controller
      */
     public function store(Request $request)
     {
-        return view('ordenes.ordenes');
+        $data = $request->all();
+
+        Orden::create([
+            'fecha' => $data['fecha_orden'],
+            'numMesa' =>$data['numMesa_orden'],
+            'estado' => $data['select_estado']
+        ]);
+
+        return redirect('/ordenes/create');
     }
 
     /**

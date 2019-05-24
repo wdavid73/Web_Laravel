@@ -25,16 +25,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($platos as $plato)
-                            <tr>
-                            <th>{{$plato->codigo}}</th>
-                            <td>{{$plato->nombre}}</td>
-                            <td>{{$plato->valor}}</td>
-                            </tr>
-                        @endforeach
+                        @forelse ($platos as $plato)
+                        <tr>
+                                <th>{{$plato->codigo}}</th>
+                                <td>{{$plato->nombre}}</td>
+                                <td>{{$plato->valor}}</td>
+                                </tr>
+                        @empty
+                        <p>No hay Platos Registrados</p>
+                            
+                        @endforelse
                     </tbody>
                 </table>
-                    <a href="/platos">Volver a Registro de platos</a>
+                    <a href="{{url('/platos')}}">Volver</a>
+                    
                 </div>
 
                 

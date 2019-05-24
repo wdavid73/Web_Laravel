@@ -20,21 +20,23 @@
                     <thead>
                         <tr>
                             <th>Codigo</th>
-                            <th>Nombre</th>
+                            <th>Nombre Ingrediente</th>
                             <th>Proveedor</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($ingredientes as $ingrediente)
-                            <tr>
+                        @forelse ($ingredientes as $ingrediente)
+                        <tr>
                             <th>{{$ingrediente->codigo}}</th>
                             <td>{{$ingrediente->nombre}}</td>
                             <td>{{$ingrediente->proveedor}}</td>
                             </tr>
-                        @endforeach
+                        @empty
+                            <p>No hay Ingredientes Registrados</p>
+                        @endforelse
                     </tbody>
                 </table>
-                    <a href="/ingredientes">Volver a Registro de Ingredientes</a>
+                    <a href="{{url('/ingredientes')}}">Volver a Registro de Ingredientes</a>
                 </div>
 
                 

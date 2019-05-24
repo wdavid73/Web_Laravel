@@ -21,7 +21,7 @@ class PlatosSeeder extends Seeder
         */
         
         // insertar datos de ejemplo a la tabla con Eloquen ORM
-        Plato::create([
+       /* Plato::create([
             'nombre' => 'Salchipapa',
             'valor' => '7000'
         ]); // inserta datos de prueba
@@ -35,7 +35,7 @@ class PlatosSeeder extends Seeder
             'nombre' => 'Pollo Asado',
             'valor' => '5000'
         ]); // inserta datos de prueba
-
+*/
         factory(Plato::class)->times(15)->create();
     }
 }

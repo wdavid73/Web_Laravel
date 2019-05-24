@@ -18,7 +18,7 @@ class IngredienteSeeder extends Seeder
             'nombre' => 'Pan',
             'proveedor' => 'Jose'
         ]);*/ 
-        
+        /*
         Ingrediente::create([
             'nombre' => 'Pan',
             'proveedor' => 'Jose'
@@ -38,7 +38,7 @@ class IngredienteSeeder extends Seeder
             'proveedor' => 'Jose'
         ]);// insertar datos de ejemplo a la tabla con Eloquen ORM
 
-
+*/
         factory(Ingrediente::class)->times(20)->create();
     }
 }
