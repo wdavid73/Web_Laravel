@@ -18,8 +18,8 @@
                <form action="{{url('ordenes/registrar')}}" method="POST">
                         <div class="form-group">
                             {{ csrf_field() }}
-                            <input name="fecha_orden" type="date" class="form-control mt-2 col-5" placeholder="Fecha de la Orden" >
-                            <input name="numMesa_orden" type="number" class="form-control mt-2 col-5" placeholder="Numero de la Mesa" >
+                            <input name="fecha_orden" type="date" class="form-control mt-2 col-5" placeholder="Fecha de la Orden" required>
+                            <input name="numMesa_orden" type="number" class="form-control mt-2 col-5" placeholder="Numero de la Mesa" required>
                             <select name="select_estado" id="" class="form-control mt-2 col-5">
                                 <option value="N">N</option>
                                 <option value="C">C</option>

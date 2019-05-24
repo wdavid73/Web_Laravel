@@ -18,8 +18,8 @@
                     <form action="{{url('/platos/registrar')}}" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <input name="plato_nombre" type="text" class="form-control mt-2 col-5" placeholder="Nombre del Plato" >
-                            <input name="plato_valor" type="number" class="form-control mt-2 col-5" placeholder="Valor del Plato" >
+                            <input name="plato_nombre" type="text" class="form-control mt-2 col-5" placeholder="Nombre del Plato" required>
+                            <input name="plato_valor" type="number" class="form-control mt-2 col-5" placeholder="Valor del Plato" required>
                             <button type="submit" class="btn btn-primary mt-2">Guardar Plato</button>
                         </div>
                     </form>

@@ -18,8 +18,8 @@
                <form action="{{url('/ingredientes/registrar')}}" method="POST">
                 {{ csrf_field() }}        
                 <div class="form-group">
-                            <input name="ingrediente_nombre" type="text" class="form-control mt-2 col-5" placeholder="Nombre del Ingrediente" >
-                            <input name="ingrediente_proveedor" type="text" class="form-control mt-2 col-5" placeholder="Nombre del Proveedor" >
+                            <input name="ingrediente_nombre" type="text" class="form-control mt-2 col-5" placeholder="Nombre del Ingrediente"  required>
+                            <input name="ingrediente_proveedor" type="text" class="form-control mt-2 col-5" placeholder="Nombre del Proveedor" required>
                             <button type="submit" class="btn btn-primary mt-2">Guardar Ingrediente</button>
                         </div>
                     </form>

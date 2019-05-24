@@ -77,7 +77,8 @@
                         </div>
         
                         <div class="links">
-                                
+                                <P>Estudiante : Wilson Padilla Julio</P><br>
+                                <a href="https://github.com/wdavid73/Web_Laravel">Repositorio del Proyecto</a>
                         </div>
                     </div>
                 </div>

@@ -51,16 +51,25 @@ class IngredientesController extends Controller
     public function store(Request $request)
     {
 
-        /*Forma 1*/
+       
         $data = $request->all();
 
+        //validacion
+        if(empty($data['ingrediente_nombre']) || empty($data['ingrediente_proveedor'])) {
+            return redirect('/ingredientes/create')->withErrors([
+                'ingrediente_nombre' => 'el Campo nombre del ingrediente es obligatorio',
+                'ingrediente_proveedor' => 'el Campo nombre del proveedor es obligatorio'
+            ]);
+        }
+
+        //mandar los datos a la base de datos
         Ingrediente::create([
             'nombre' => $data['ingrediente_nombre'],
             'proveedor' => $data['ingrediente_proveedor']
         ]);
-        /*Forma 2*/
+        
 
-        return redirect('/ingredientes/create');
+        return redirect('/ingredientes/index');
     }
 
     /**
