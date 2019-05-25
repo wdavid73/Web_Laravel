@@ -55,11 +55,16 @@ class IngredientesController extends Controller
         $data = $request->all();
 
         //validacion
-        if(empty($data['ingrediente_nombre']) || empty($data['ingrediente_proveedor'])) {
+        if(empty($data['ingrediente_nombre'])) {
             return redirect('/ingredientes/create')->withErrors([
                 'ingrediente_nombre' => 'el Campo nombre del ingrediente es obligatorio',
+            ])->withInput();
+        }
+
+        if(empty($data['ingrediente_proveedor'])) {
+            return redirect('/ingredientes/create')->withErrors([
                 'ingrediente_proveedor' => 'el Campo nombre del proveedor es obligatorio'
-            ]);
+            ])->withInput();
         }
 
         //mandar los datos a la base de datos

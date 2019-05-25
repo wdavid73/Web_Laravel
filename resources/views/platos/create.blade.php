@@ -15,11 +15,24 @@
             @extends('layout') 
             @section('content')
                <div class="container mt-5">
+
+                    @if ($errors->any())    
+                        <div class="alert alert-danger mb-2 col-7">
+                            <h6>Porfavor Corregir estos errores:</h6>                       
+                        </div>
+                    @endif
+
                     <form action="{{url('/platos/registrar')}}" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <input name="plato_nombre" type="text" class="form-control mt-2 col-5" placeholder="Nombre del Plato" required>
+                            @if ($errors->has('plato_nombre'))
+                                <p>{{ $errors->first('plato_nombre')}}</p>
+                            @endif
                             <input name="plato_valor" type="number" class="form-control mt-2 col-5" placeholder="Valor del Plato" required>
+                            @if ($errors->has('plato_valor'))
+                                <p>{{ $errors->first('plato_valor')}}</p>
+                            @endif
                             <button type="submit" class="btn btn-primary mt-2">Guardar Plato</button>
                         </div>
                     </form>

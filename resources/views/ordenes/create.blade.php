@@ -15,11 +15,24 @@
    @extends('layout') 
             @section('content')
                <div class="container mt-5">
+
+                    @if ($errors->any())    
+                    <div class="alert alert-danger mb-2 col-7">
+                        <h6>Porfavor Corregir estos errores:</h6>                       
+                    </div>
+                 @endif
+
                <form action="{{url('ordenes/registrar')}}" method="POST">
                         <div class="form-group">
                             {{ csrf_field() }}
                             <input name="fecha_orden" type="date" class="form-control mt-2 col-5" placeholder="Fecha de la Orden" required>
+                            @if ($errors->has('fecha_orden'))
+                                <p>{{ $errors->first('fecha_orden')}}</p>
+                            @endif
                             <input name="numMesa_orden" type="number" class="form-control mt-2 col-5" placeholder="Numero de la Mesa" required>
+                            @if ($errors->has('numMesa_orden'))
+                                <p>{{ $errors->first('numMesa_orden')}}</p>
+                            @endif
                             <select name="select_estado" id="" class="form-control mt-2 col-5">
                                 <option value="N">N</option>
                                 <option value="C">C</option>

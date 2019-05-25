@@ -47,13 +47,22 @@ class OrdenesController extends Controller
         $data = $request->all();
 
         //Validacion 
-        if(empty($data['fecha_orden']) || empty($data['numMesa_orden']) || empty($data['select_estado'])) {
+        if(empty($data['fecha_orden'])) {
             return redirect('/ordenes/create')->withErrors([
                 'fecha_orden' => 'el Campo fecha de orden es obligatorio',
-                'numMesa_orden' => 'el Campo numero de mesa es obligatorio',
-                'select_estado' => 'El estado es Obligatorio',
-            ]);
+            ])->withInput();
         }
+        if(empty($data['numMesa_orden']) ) {
+            return redirect('/ordenes/create')->withErrors([
+                'numMesa_orden' => 'el Campo numero de mesa es obligatorio',
+            ])->withInput();
+        }
+        if(empty($data['select_estado'])) {
+            return redirect('/ordenes/create')->withErrors([
+                'numMesa_orden' => 'el Campo numero de mesa es obligatorio',
+            ])->withInput();
+        }
+        
         //mandar datos a la base de datos
         Orden::create([
             'fecha' => $data['fecha_orden'],

@@ -48,13 +48,19 @@ class PlatosController extends Controller
         $data = $request->all();
 
         //validaciones
-        if(empty($data['plato_nombre']) || empty($data['plato_valor'])) {
+        if(empty($data['plato_nombre'])) {
             return redirect('/platos/create')->withErrors([
                 'plato_nombre' => 'el Campo nombre del plato es obligatorio',
+                
+            ])->withInput();
+        }
+        if(empty($data['plato_valor'])) {
+            return redirect('/platos/create')->withErrors([
                 'plato_valor' => 'el Campo valor del plato es obligatorio',
                 
-            ]);
+            ])->withInput();
         }
+
 
         //Agregar a la base de datos
         Plato::create([
