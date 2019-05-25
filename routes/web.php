@@ -63,12 +63,16 @@ Route::put('/ordenes/{ordenes}' , 'OrdenesController@update');
 
 /* -------------- Relaciones Muchos a Muchos --------------- */
 //FIXME:: Arregar Index
+/* ------------- Relacion Ingrediente - Plato --------------------*/
 Route::get('/ingrediente_plato/index' , 'IngredientePlatoController@index')->name('ingrediente_plato.index');
 Route::get('/ingrediente_plato', 'IngredientePlatoController@principalView');
 /*Registrar relacion en la base de datos*/
 Route::get('/ingrediente_plato/create' , 'IngredientePlatoController@create')->name('ingrediente_plato.create');
 Route::post('/ingrediente_plato/registrar', 'IngredientePlatoController@store');
 
-Route::get('/orden_plato/index', function () {
-    return view('/orden_plato/index');
-})->name('orden_plato.index');
+/* ------------- Relacion Orden - Plato --------------------*/ 
+Route::get('/orden_plato/index' , 'OrdenPlatoController@index')->name('orden_plato.index');
+Route::get('/orden_plato', 'OrdenPlatoController@principalView');
+/*Registrar relacion en la base de datos*/
+Route::get('/orden_plato/create' , 'OrdenPlatoController@create')->name('orden_plato.create');
+Route::post('/orden_plato/registrar', 'OrdenPlatoController@store');

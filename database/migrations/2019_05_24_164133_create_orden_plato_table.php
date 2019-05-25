@@ -19,12 +19,12 @@ class CreateOrdenPlatoTable extends Migration
             $table->unsignedInteger('plato_id');
             $table->foreign('plato_id')->references('id')->on('platos');
             
-            $table->unsignedInteger('num_orden');
+            $table->unsignedInteger('orden_id');
           //FIXME:
-            $table->foreign('num_orden')->references('id')->on('ordenes');
+            $table->foreign('orden_id')->references('id')->on('ordenes');
             
-            $table->integer('cantidad');
-            $table->integer('valor');
+            $table->integer('cantidad')->default('1');
+            $table->integer('valor')->default('20000');
 
             $table->timestamps();
         });

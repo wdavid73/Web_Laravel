@@ -14,7 +14,7 @@
 </head>
 <body>
     
-    <div class="container">
+    
         <ul class="nav nav-tabs text-dark justify-content-center">
             <li class="nav-item ">
                 <a href="/" class="nav-link active">Home</a>
@@ -29,7 +29,7 @@
                 <a class="nav-link active" href="/ordenes">Ordenes</a>
             </li>
         </ul>
-    </div>
+    
 
     @yield('content')
     

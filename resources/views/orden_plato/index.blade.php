@@ -16,38 +16,82 @@
         @extends('layout')    
 
         @section('content')
-            <h1>Relacionar Ingrediente con Plato</h1>
-        <form action="">
-            <div class="row">
-                <div class="col">
-                    <!--Ingredientes-->
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Platos</h4>
-                            @foreach ($platos as $plato)
-                                        <input type="checkbox" name="ingrediente" class="form-check-input" value="{{$plato->id}}"> {{$plato->nombre}} -- {{$plato->valor}} <br>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <!--Platos-->
-                    <div class="card">
-                        <div class="card-body">
-                                <label for="">Selecciones un Plato:</label>
-                                <select name="plato" id="" class="form-control">
-                                        @foreach ($ordenes as $orden)
-                                            <option value="{{$orden->id}}">{{$plato->fecha}} -- {{$plato->nuMesa}}</option>
-                                        @endforeach
-                                </select>
-                                <input type="submit" class="mt-2 btn btn-success" value="Agregar ingrediente al Plato">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <a class="ml-5" href="{{url('/platos/index')}}">Volver a Registro de platos</a><br>
-        <a class="ml-5" href="{{url('/ingredientes/index')}}">Volver a Registro de platos</a><br>    
+        <div class="container mt-5">
+                <h1>Todos los registros</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre del Plato</th>
+                        <th>Fecha de la Orden</th>
+                        <th>Numero de Meas</th>
+                        <th>Estado de la Orden</th>
+                        <th>cantidad</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse ($orden_plato as $o_p)
+                        <tr>
+                            <th>
+                                {{$o_p->id}}
+                            </th>
+                            <th>
+                                    @forelse ($platos as $plato)
+                                        @if ($plato->id == $o_p->plato_id)
+                                            {{$plato->nombre}}
+                                        @endif
+                                    @empty
+                                        
+                                    @endforelse
+                            </th>
+                            <th>
+                                    @forelse ($ordenes as $orden)
+                                        @if ($orden->id == $o_p->orden_id)
+                                            {{$orden->fecha}}
+                                        @endif
+                                    @empty
+                                        
+                                    @endforelse
+                            </th>
+                            <th>
+                                    @forelse ($ordenes as $orden)
+                                        @if ($orden->id == $o_p->orden_id)
+                                            {{$orden->numMesa}}
+                                        @endif
+                                    @empty
+                                        
+                                    @endforelse
+                            </th>
+                            <th>
+                                    @forelse ($ordenes as $orden)
+                                        @if ($orden->id == $o_p->orden_id)
+                                            {{$orden->estado}}
+                                        @endif
+                                    @empty
+                                        
+                                    @endforelse
+                            </th>
+                            <th>
+                                {{$o_p->cantidad}}
+                            </th>
+                            <th>
+                                {{$o_p->valor}}
+                            </th>
+                        </tr>
+                    @empty
+                        <th>NO hay Registros</th>
+                    @endforelse
+                    <th></th>
+                </tbody>
+            </table>
+            
+            <a class="ml-5" href="{{url('/ordenes/index')}}"><button class="btn btn-success mt-2">Volver a Registro de Ordenes</button></a>
+            <a class="ml-5" href="{{url('/platos/index')}}"><button class="btn btn-success mt-2">Volver a Registro de Platos</button></a>
+        </div>
+        {{-- <p>{{$ordenes}}</p><br>
+        <p>{{$platos}}</p><br>
+        <p>{{$orden_plato}}</p><br> --}}
             
         @endsection
         

@@ -18,7 +18,7 @@ class Orden_Plato_Seeder extends Seeder
 
         DB::table('orden_plato')->insert([
             'plato_id' => $platoId->id,
-            'num_orden' => $numOrdenId->id,
+            'orden_id' => $numOrdenId->id,
             'cantidad' => '2',
             'valor' => '120000'
         ]);

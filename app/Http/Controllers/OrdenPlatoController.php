@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Orden;
+use App\Models\Plato;
+use Illuminate\Support\Facades\DB;
 
 class OrdenPlatoController extends Controller
 {
@@ -13,7 +16,17 @@ class OrdenPlatoController extends Controller
      */
     public function index()
     {
-        //
+        $ordenes = Orden::all();
+        $platos = Plato::all();
+        $orden_plato = DB::table('orden_plato')->get();
+
+       return view('orden_plato.index' , compact('ordenes' , 'platos' , 'orden_plato'));
+
+    }
+    public function principalView()
+    {
+       return view('orden_plato.orden_plato');
+
     }
 
     /**
@@ -23,7 +36,9 @@ class OrdenPlatoController extends Controller
      */
     public function create()
     {
-        //
+        $platos = Plato::all();
+        $ordenes = Orden::all()->where('estado' , 'N');
+        return view('orden_plato.create' , compact('platos' , 'ordenes'));
     }
 
     /**
@@ -34,7 +49,17 @@ class OrdenPlatoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->all();
+        $id_plato = $data['plato'];
+        $id_orden = $data['orden'];
+
+        $plato = Plato::find($id_plato);
+        $orden = Orden::find($id_orden);
+
+        $plato->ordenes()->sync($id_orden);
+        $orden->platos()->sync($id_plato);
+
+        return redirect ('orden_plato/index');
     }
 
     /**
