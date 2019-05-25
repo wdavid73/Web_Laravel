@@ -90,9 +90,9 @@ class OrdenesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Orden $ordenes)
     {
-        //
+        return view('ordenes/edit' , ['ordenes' => $ordenes]);
     }
 
     /**
@@ -102,9 +102,15 @@ class OrdenesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Orden $ordenes)
     {
-        //
+        $data = request()->validate([
+            'fecha' => 'required',
+            'numMesa' => 'required'
+        ]);
+
+        $ordenes->update($data);
+        return redirect('ordenes.show' , ['ordenes' => $ordenes]);
     }
 
     /**

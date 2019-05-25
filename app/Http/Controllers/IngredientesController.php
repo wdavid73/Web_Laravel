@@ -114,10 +114,12 @@ class IngredientesController extends Controller
      */
     public function update(Ingrediente $ingredientes)
     {
+        
         $data = request()->validate([
             'nombre' => 'required',
             'proveedor' => 'required'    
         ]);
+        
         $ingredientes->update($data);
         return redirect('ingredientes.show' , ['ingredientes' => $ingredientes]);
     }

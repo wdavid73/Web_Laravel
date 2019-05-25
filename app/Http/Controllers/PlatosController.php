@@ -88,9 +88,9 @@ class PlatosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Plato $platos)
     {
-        //
+        return view('/platos/edit' , ['platos' => $platos]);
     }
 
     /**
@@ -100,9 +100,15 @@ class PlatosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Plato $platos)
     {
-        //
+        $data = request()->validate([
+            'nombre' => 'required',
+            'valor' => 'required'
+        ]);
+        
+        $platos->update($data);
+        return redirect('platos.show' , ['platos' => $platos]);
     }
 
     /**
