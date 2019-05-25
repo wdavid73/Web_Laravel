@@ -100,7 +100,7 @@ class IngredientesController extends Controller
      */
     public function edit(Ingrediente $ingredientes)
     {
-        return view('ingredientes.edit', ['ingredientes' => $ingredientes]);
+        return view('/ingredientes/edit', ['ingredientes' => $ingredientes]);
     }
 
     /**
@@ -112,9 +112,14 @@ class IngredientesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Ingrediente $ingredientes)
     {
-        //
+        $data = request()->validate([
+            'nombre' => 'required',
+            'proveedor' => 'required'    
+        ]);
+        $ingredientes->update($data);
+        return redirect('ingredientes.show' , ['ingredientes' => $ingredientes]);
     }
 
     /**

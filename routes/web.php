@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\IngredientesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,10 +23,11 @@ Route::get('/ingredientes', 'IngredientesController@principalView');
 //registro de ingrediente
 Route::get('/ingredientes/create' , 'IngredientesController@create')->name('CrearIngrediente');
 Route::post('/ingredientes/registrar', 'IngredientesController@store');
-//editar
-Route::get('/ingredientes/{ingredientes}/edit' , 'IngredientesController@edit')->name("ingrediente.edit");
 //mostrar detalles del ingrediente
 Route::get('/ingredientes/{ingredientes}' , 'IngredientesController@show')->where('ingredientes' ,'[0-9]+')->name("ingredientes.show");
+//editar
+Route::get('/ingredientes/{ingredientes}/edit' , 'IngredientesController@edit')->name("ingrediente.edit");
+Route::put('/ingredientes/{ingredientes}' , 'IngredientesController@update');
 
 
 //Ruta de Platos
