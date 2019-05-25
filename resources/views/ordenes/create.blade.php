@@ -33,10 +33,10 @@
                             @if ($errors->has('numMesa_orden'))
                                 <p>{{ $errors->first('numMesa_orden')}}</p>
                             @endif
-                            <select name="select_estado" id="" class="form-control mt-2 col-5">
+                            <!--<select name="select_estado" id="" class="form-control mt-2 col-5">
                                 <option value="N">N</option>
                                 <option value="C">C</option>
-                            </select>
+                            </select>-->
                             <button type="submit" class="btn btn-primary mt-2">Registrar Orden</button>
                         </div>
                     </form>

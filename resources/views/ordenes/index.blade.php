@@ -28,10 +28,21 @@
                     <tbody>
                         @forelse ($ordenes as $orden)
                         <tr>
-                                <th>{{$orden->numero}}</th>
+                                <th>{{$orden->id}}</th>
                                 <td>{{$orden->fecha}}</td>
                                 <td>{{$orden->numMesa}}</td>
                                 <td>{{$orden->estado}}</td>
+                                <td>
+                                        <a href="/ordenes/{{$orden->id}}">
+                                            <button class="btn btn-primary">Detalles</button>
+                                        </a>
+                                        <a href="/ordenes/{{$orden->id}}/edit">
+                                            <button class="btn btn-success">Editar</button>
+                                        </a>
+                                        <a href="/ordenes/index">
+                                            <button class="btn btn-danger">Eliminar</button>
+                                        </a>
+                                    </td>
                                 </tr>
                         @empty
                             <p>No hay Ordenes Registradas</p>

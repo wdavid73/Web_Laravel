@@ -27,9 +27,20 @@
                     <tbody>
                         @forelse ($platos as $plato)
                         <tr>
-                                <th>{{$plato->codigo}}</th>
+                                <th>{{$plato->id}}</th>
                                 <td>{{$plato->nombre}}</td>
                                 <td>{{$plato->valor}}</td>
+                                <td>
+                                        <a href="/platos/{{$plato->id}}">
+                                            <button class="btn btn-primary">Detalles</button>
+                                        </a>
+                                        <a href="/platos/{{$plato->id}}/edit">
+                                            <button class="btn btn-success">Editar</button>
+                                        </a>
+                                        <a href="/platos">
+                                            <button class="btn btn-danger">Eliminar</button>
+                                        </a>
+                                    </td>
                                 </tr>
                         @empty
                         <p>No hay Platos Registrados</p>

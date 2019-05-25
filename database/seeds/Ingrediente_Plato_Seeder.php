@@ -13,12 +13,12 @@ class Ingrediente_Plato_Seeder extends Seeder
     {
        DB::table('ingrediente_plato')->truncate();
 
-        $ingredienteId = DB::table('ingredientes')->select('codigo')->first();
-        $platoId = DB::table('platos')->select('codigo')->first();
+        $ingredienteId = DB::table('ingredientes')->select('id')->first();
+        $platoId = DB::table('platos')->select('id')->first();
 
         DB::table('ingrediente_plato')->insert([
-            'ingrediente_codigo' => $ingredienteId->codigo,
-            'plato_codigo' => $platoId->codigo,
+            'ingrediente_id' => $ingredienteId->id,
+            'plato_id' => $platoId->id,
             'cantidad' => '2',
         ]); // insertar datos de ejemplo
     

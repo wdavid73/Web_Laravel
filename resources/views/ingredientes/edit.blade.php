@@ -23,14 +23,14 @@
                             <h6>Porfavor Corregir estos errores:</h6>                       
                         </div>
                      @endif
-               <form action="{{url('/ingredientes/registrar')}}" method="POST">
+               <form action="{{url('/ingredientes')}}" method="POST">
                 {{ csrf_field() }}        
                     <div class="form-group">
-                        <input name="ingrediente_nombre" type="text" class="form-control mt-2 col-5" placeholder="Nombre del Ingrediente" value="{{ old('ingrediente_nombre' , $ingrediente->nombre) }}"  required>
+                        <input name="ingrediente_nombre" type="text" class="form-control mt-2 col-5" placeholder="Nombre del Ingrediente" value="{{ old('ingrediente_nombre' , $ingredientes->nombre) }}"  required>
                             @if ($errors->has('ingrediente_nombre'))
                                 <p>{{ $errors->first('ingrediente_nombre')}}</p>
                             @endif
-                        <input name="ingrediente_proveedor" type="text" class="form-control mt-2 col-5" placeholder="Nombre del Proveedor" value="{{ old('ingrediente_proveedor', $ingrediente->proveedor) }}" required>
+                        <input name="ingrediente_proveedor" type="text" class="form-control mt-2 col-5" placeholder="Nombre del Proveedor" value="{{ old('ingrediente_proveedor', $ingredientes->proveedor) }}" required>
                             @if ($errors->has('ingrediente_proveedor'))
                                 <p>{{ $errors->first('ingrediente_proveedor')}}</p>
                             @endif

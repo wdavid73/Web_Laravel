@@ -15,7 +15,7 @@ class CreatePlatosTable extends Migration
     {
         Schema::create('platos', function (Blueprint $table) {
             //Campos Basicos
-            $table->increments('codigo');
+            $table->increments('id');//Codigo
             $table->char('nombre', 50)->unique();
             $table->double('valor');
             $table->timestamps();

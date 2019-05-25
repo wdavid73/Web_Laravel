@@ -20,7 +20,7 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Codigo</th>
+                            <th>ID</th>
                             <th>Nombre Ingrediente</th>
                             <th>Proveedor</th>
                             <th>Detalles</th>
@@ -29,14 +29,14 @@
                     <tbody>
                         @forelse ($ingredientes as $ingrediente)
                         <tr>
-                            <th>{{$ingrediente->codigo}}</th>
+                            <th>{{$ingrediente->id}}</th>
                             <td>{{$ingrediente->nombre}}</td>
                             <td>{{$ingrediente->proveedor}}</td>
                             <td>
-                                <a href="/ingredientes/{{$ingrediente->codigo}}">
+                                <a href="/ingredientes/{{$ingrediente->id}}">
                                     <button class="btn btn-primary">Detalles</button>
                                 </a>
-                                <a href="/ingredientes/{{$ingrediente->codigo}}/edit">
+                                <a href="/ingredientes/{{$ingrediente->id}}/edit">
                                     <button class="btn btn-success">Editar</button>
                                 </a>
                                 <a href="/ingredientes/index">

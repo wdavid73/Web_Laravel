@@ -13,12 +13,7 @@ class IngredienteSeeder extends Seeder
      */
     public function run()
     {
-        /*// insertar datos de ejemplo a la tabla con el constructor de consultas
-        DB::table('ingredientes')->insert([
-            'nombre' => 'Pan',
-            'proveedor' => 'Jose'
-        ]);*/ 
-        /*
+    
         Ingrediente::create([
             'nombre' => 'Pan',
             'proveedor' => 'Jose'
@@ -38,7 +33,7 @@ class IngredienteSeeder extends Seeder
             'proveedor' => 'Jose'
         ]);// insertar datos de ejemplo a la tabla con Eloquen ORM
 
-*/
-        factory(Ingrediente::class)->times(20)->create();
+
+        factory(Ingrediente::class)->times(15)->create();
     }
 }

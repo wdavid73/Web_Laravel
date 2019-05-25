@@ -28,15 +28,14 @@ Route::get('/ingredientes/{ingredientes}/edit' , 'IngredientesController@edit')-
 Route::get('/ingredientes/{ingredientes}' , 'IngredientesController@show')->where('ingredientes' ,'[0-9]+')->name("ingredientes.show");
 
 
-
-
-
 //Ruta de Platos
 Route::get('/platos/index', 'PlatosController@index');
 Route::get('/platos', 'PlatosController@principalView');
 //registro de plato
 Route::get('/platos/create' , 'PlatosController@create')->name('CrearPlato');
 Route::post('/platos/registrar', 'PlatosController@store');
+//mostrar detalles del plato
+Route::get('/platos/{platos}' , 'PlatosController@show')->where('platos' ,'[0-9]+')->name("platos.show");
 
 
 //controlador de ordenes
@@ -45,6 +44,8 @@ Route::get('/ordenes', 'OrdenesController@principalView');
 //registro de ordenes
 Route::get('/ordenes/create' , 'OrdenesController@create')->name('CrearOrden');
 Route::post('/ordenes/registrar', 'OrdenesController@store');
+//mostrar detalles del plato
+Route::get('/ordenes/{ordenes}' , 'OrdenesController@show')->where('ordenes' ,'[0-9]+')->name("ordenes.show");
 
 
 

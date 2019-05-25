@@ -82,7 +82,7 @@ class IngredientesController extends Controller
      * 
      * mostramos un recurso especifico
      *
-     * @param  int  $id
+     * @param  int  $codigo
      * @return \Illuminate\Http\Response
      */
     public function show(Ingrediente $ingredientes)

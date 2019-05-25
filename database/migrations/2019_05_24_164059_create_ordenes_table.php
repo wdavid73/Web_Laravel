@@ -16,10 +16,10 @@ class CreateOrdenesTable extends Migration
         if(!Schema::hasTable('ordenes')){
             Schema::create('ordenes' , function (Blueprint $table){
                 //Campos Basicos
-                $table->increments('numero');
+                $table->increments('id');//Numero de orden
                 $table->date('fecha');
                 $table->integer('numMesa');
-                $table->char('estado' ,1);
+                $table->char('estado' ,1)->default('N');
                 $table->timestamps();
             });
         }

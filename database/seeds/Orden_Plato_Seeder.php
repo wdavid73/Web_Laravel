@@ -13,12 +13,12 @@ class Orden_Plato_Seeder extends Seeder
     {
         DB::table('orden_plato')->truncate();
 
-        $platoId = DB::table('platos')->select('codigo')->first();
-        $numOrdenId = DB::table('ordenes')->select('numero')->first();
+        $platoId = DB::table('platos')->select('id')->first();
+        $numOrdenId = DB::table('ordenes')->select('id')->first();
 
         DB::table('orden_plato')->insert([
-            'plato_codigo' => $platoId->codigo,
-            'num_orden' => $numOrdenId->numero,
+            'plato_id' => $platoId->id,
+            'num_orden' => $numOrdenId->id,
             'cantidad' => '2',
             'valor' => '120000'
         ]);

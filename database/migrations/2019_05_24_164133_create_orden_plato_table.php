@@ -16,12 +16,12 @@ class CreateOrdenPlatoTable extends Migration
         Schema::create('orden_plato', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->unsignedInteger('plato_codigo');
-            $table->foreign('plato_codigo')->references('codigo')->on('platos');
+            $table->unsignedInteger('plato_id');
+            $table->foreign('plato_id')->references('id')->on('platos');
             
             $table->unsignedInteger('num_orden');
           //FIXME:
-            $table->foreign('num_orden')->references('numero')->on('ordenes');
+            $table->foreign('num_orden')->references('id')->on('ordenes');
             
             $table->integer('cantidad');
             $table->integer('valor');

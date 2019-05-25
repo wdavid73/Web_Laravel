@@ -77,9 +77,9 @@ class PlatosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Plato $platos)
     {
-        //
+        return view('/platos/show', compact('platos'));
     }
 
     /**
