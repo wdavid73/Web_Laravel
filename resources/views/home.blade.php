@@ -74,11 +74,10 @@
                     <div class="content">
                         <div class="title m-b-md">
                             Proyecto Laravel
+                            <h6><strong>Estudiante : Wilson Padilla Julio</strong></h6><br>
                         </div>
-        
-                        <div class="links">
-                                <P>Estudiante : Wilson Padilla Julio</P><br>
-                                <a href="https://github.com/wdavid73/Web_Laravel">Repositorio del Proyecto</a>
+                        <div class="links"> 
+                            <a href="https://github.com/wdavid73/Web_Laravel">Repositorio del Proyecto</a>
                         </div>
                     </div>
                 </div>

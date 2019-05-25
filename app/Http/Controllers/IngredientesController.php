@@ -85,9 +85,9 @@ class IngredientesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Ingrediente $ingredientes)
     {
-        //
+        return view('/ingredientes/show', compact('ingredientes'));
     }
 
     /**
@@ -98,9 +98,9 @@ class IngredientesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Ingrediente $ingredientes)
     {
-        //
+        return view('ingredientes.edit', ['ingredientes' => $ingredientes]);
     }
 
     /**
