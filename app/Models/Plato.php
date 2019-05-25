@@ -8,11 +8,11 @@ class Plato extends Model
 {
 protected $fillable = ['nombre' , 'valor'];
     public function ingredientes(){
-        return $this->belongsToMany('App\Models\Ingrediente')->withTimestamps();
+        return $this->belongsToMany(Ingrediente::class , 'ingrediente_plato')->withTimestamps();
     }
 
     public function ordenes(){
-        return $this->belongsToMany('App\Modelos\Orden')->withTimestamps();
+        return $this->belongsToMany(Orden::class ,'orden_plato')->withTimestamps();
     }
 
     

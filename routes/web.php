@@ -24,7 +24,7 @@ Route::get('/ingredientes/index', 'IngredientesController@index');
 Route::get('/ingredientes', 'IngredientesController@principalView');
 
 //registro de ingrediente
-Route::get('/ingredientes/create' , 'IngredientesController@create')->name('CrearIngrediente');
+Route::get('/ingredientes/create' , 'IngredientesController@create')->name('ingrediente.create');
 Route::post('/ingredientes/registrar', 'IngredientesController@store');
 //mostrar detalles del ingrediente
 Route::get('/ingredientes/{ingredientes}' , 'IngredientesController@show')->where('ingredientes' ,'[0-9]+')->name("ingredientes.show");
@@ -62,10 +62,13 @@ Route::put('/ordenes/{ordenes}' , 'OrdenesController@update');
 
 
 /* -------------- Relaciones Muchos a Muchos --------------- */
-Route::get('/ingrediente_plato/index', function () {
-    return view('/ingrediente_plato/index');
-})->name('ingrediente_plato');
+//FIXME:: Arregar Index
+Route::get('/ingrediente_plato/index' , 'IngredientePlatoController@index')->name('ingrediente_plato.index');
+Route::get('/ingrediente_plato', 'IngredientePlatoController@principalView');
+/*Registrar relacion en la base de datos*/
+Route::get('/ingrediente_plato/create' , 'IngredientePlatoController@create')->name('ingrediente_plato.create');
+Route::post('/ingrediente_plato/registrar', 'IngredientePlatoController@store');
 
 Route::get('/orden_plato/index', function () {
     return view('/orden_plato/index');
-})->name('orden_plato');
+})->name('orden_plato.index');

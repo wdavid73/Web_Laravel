@@ -8,7 +8,7 @@ class Orden extends Model
 {
     protected $fillable = ['fecha' , 'numMesa' , 'estado'];
     public function platos (){
-        return $this->belongsToMany('App\Models\Plato')->withTimestamps();
+        return $this->belongsToMany(Plato::class , 'orden_plato')->withTimestamps();
     }
     protected $table = 'ordenes';
 }

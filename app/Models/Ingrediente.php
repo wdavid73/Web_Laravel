@@ -9,7 +9,7 @@ class Ingrediente extends Model
     
     protected $fillable = ['nombre' , 'proveedor'];
     public function platos (){
-        return $this->belongsToMany('App\Models\Plato')->withTimestamps();
+        return $this->belongsToMany(Plato::class , 'ingrediente_plato')->withTimestamps();
     }
     protected $table = "ingredientes";
     

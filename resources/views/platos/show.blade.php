@@ -20,6 +20,7 @@
                             <br> 
                         Valor del Plato : {{$platos->valor}} 
                     </p>
+                    <a href="{{url('/ingrediente_plato/index')}}">Agregar Ingrediente</a><br>
                  <a href="{{url('/platos/index')}}">Volver</a>
              </div>
          @endsection     

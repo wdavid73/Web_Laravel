@@ -25,7 +25,7 @@ class CreateIngredientePlatoTable extends Migration
             $table->unsignedInteger('plato_id'); //parte 1
             $table->foreign('plato_id')->references('id')->on('platos'); //parte 2
 
-            $table->double('cantidad');
+            $table->char('cantidad' , 50)->default("1");
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();
