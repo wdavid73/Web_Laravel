@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Ingrediente;
 use App\Models\Plato;
 use Illuminate\Support\Facades\DB;
+/* use App\Models\IngredientePlato; */
 
 class IngredientePlatoController extends Controller
 {
@@ -53,22 +54,31 @@ class IngredientePlatoController extends Controller
        $data = request()->all();
        $id_ingrediente = $data['ingrediente'];
        $id_plato = $data['plato']; 
-       $cantidad_p = $data['cantidad']; 
-    
-       //dd($data);
+       $cantidad = $data['cantidad']; 
 
        
-       $ingrediente = Ingrediente::find($id_ingrediente);
-       $plato = Plato::find($id_plato);
+       /* $ingrediente = Ingrediente::find($id_ingrediente);
+       $plato = Plato::find($id_plato); */
 
-       
-       $ingrediente->platos()->sync($id_plato);
-       $plato->ingredientes()->sync($id_ingrediente);
-    
-      /*  $cantidad = IngredientePlato::find($cantidad_p);
-        $cantidad->attach($cantidad); */
+     DB::table('ingrediente_plato')->insert([
+         'ingrediente_id' => $id_ingrediente,
+         'plato_id' => $id_plato,
+         'cantidad' => $cantidad,
+     ]);
 
-        return redirect('ingrediente_plato/index');
+
+       /* $ingrediente->platos()->attach([
+            'plato_id' => $id_plato,
+            
+        ]);
+
+       $plato->ingredientes()->attach([
+           'ingrediente_id' => $id_ingrediente,
+           
+       ]);
+        */
+
+       return redirect('ingrediente_plato/index');
     }
 
     /**

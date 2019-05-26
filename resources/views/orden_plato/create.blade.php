@@ -30,6 +30,7 @@
                                           <option value="{{$plato->id}}">{{$plato->nombre}}</option>
                                       @endforeach
                               </select>
+                              <input type="number" class="form-control col-3 mt-1" name="cantidadPlato" placeholder="Cantidad Del Plato" required>
                               
                       </div>
                   </div>

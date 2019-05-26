@@ -49,15 +49,24 @@ class OrdenPlatoController extends Controller
      */
     public function store(Request $request)
     {
+        /* -------- Obtencion de informacion ----------- */
         $data = request()->all();
         $id_plato = $data['plato'];
         $id_orden = $data['orden'];
-
+        $cantidad_platos = $data['cantidadPlato'];
         $plato = Plato::find($id_plato);
-        $orden = Orden::find($id_orden);
-
+        $valor = $plato->valor * $cantidad_platos;
+        /* $orden = Orden::find($id_orden);
         $plato->ordenes()->sync($id_orden);
-        $orden->platos()->sync($id_plato);
+        $orden->platos()->sync($id_plato); */
+
+        /*---- Registro de Informacion en la BD -------*/
+        DB::table('orden_plato')->insert([
+            'plato_id' => $id_plato,
+            'orden_id' => $id_orden,
+            'cantidad' => $cantidad_platos,
+            'valor' => $valor
+        ]);
 
         return redirect ('orden_plato/index');
     }

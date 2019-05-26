@@ -78,7 +78,8 @@
                 <div class="links">
                         <a href="/ordenes/index"> Ver todos las Ordenes</a>
                         <a href="/ordenes/create"> Registrar Orden Nueva</a>
-                        <a href="/orden_plato"> Orden -- Plato</a
+                        <a href="/orden_plato"> Orden -- Plato</a>
+                        <a href=""> Listado de Ordenes del Dia</a>
                 </div>
             </div>
         </div>
