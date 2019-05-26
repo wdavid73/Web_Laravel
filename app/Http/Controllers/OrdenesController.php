@@ -40,6 +40,11 @@ class OrdenesController extends Controller
 
         return view('ordenes.list' , compact( 'ordenes' , 'platos' , 'orden_plato' , 'data'));
     }
+
+    public function buscarMesa(Request $request)
+    {
+        return view('ordenes.buscarMesa');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -48,6 +53,10 @@ class OrdenesController extends Controller
     public function create()
     {
         return view('ordenes.create');
+    }
+
+    public function cierreOrden(Request $request){
+        return $request->all();
     }
 
     

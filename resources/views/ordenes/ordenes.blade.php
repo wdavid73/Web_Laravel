@@ -76,10 +76,12 @@
                 </div>
 
                 <div class="links">
-                        <a href="/ordenes/index"> Ver todos las Ordenes</a>
-                        <a href="/ordenes/create"> Registrar Orden Nueva</a>
-                        <a href="/orden_plato"> Orden -- Plato</a>
-                        <a href="ordenes.list"> Listado de Ordenes del Dia</a>
+                    
+                        <a href="/ordenes/index"> <button class="btn btn-dark">Ver todos las Ordenes</button></a>
+                        <a href="/ordenes/create"><button class="btn btn-dark"> Registrar Orden Nueva </button></a>
+                        <a href="/orden_plato"><button class="btn btn-dark"> Orden -- Plato </button></a>
+                        <a href="ordenes.list"><button class="btn btn-dark"> Listado de Ordenes del Dia </button></a>
+                        <a href="/ordenes/buscarMesa"> <button class="btn btn-dark">Cierre de Orden </button></a>
                 </div>
             </div>
         </div>

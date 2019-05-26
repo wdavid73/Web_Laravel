@@ -76,9 +76,9 @@
                 </div>
 
                 <div class="links">
-                        <a href="/platos/index"> Ver todos los platos</a>
-                        <a href="/platos/create"> Registrar Plato Nuevo</a>
-                        <a href="/ingrediente_plato"> Ingrendiente -- Plato</a>
+                        <a href="/platos/index"> <button class="btn btn-info"> Ver todos los platos</button></a>
+                        <a href="/platos/create"> <button class="btn btn-info">  Registrar Plato Nuevo</button></a>
+                        <a href="/ingrediente_plato">  <button class="btn btn-info"> Ingrendiente -- Plato</button></a>
                 </div>
             </div>
         </div>

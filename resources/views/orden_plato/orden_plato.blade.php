@@ -76,8 +76,8 @@
                 </div>
 
                 <div class="links">
-                        <a href="/orden_plato/index"> Ver todos los Registros</a>
-                        <a href="/orden_plato/create"> Agregar un Nuevo Registro</a>
+                        <a href="/orden_plato/index"> <button class="btn btn-success"> Ver todos los Registros</button></a>
+                        <a href="/orden_plato/create">  <button class="btn btn-success"> Agregar un Nuevo Registro</button></a>
                 </div>
             </div>
         </div>

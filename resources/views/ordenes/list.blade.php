@@ -24,7 +24,7 @@
     <form action="{{ route('ordenes.list') }}" method="GET" class="form-inline justify-content-center mt-4">
         <div class="form-group">    
         <label for="">Fecha del Dia: </label>
-        <input type="date"  class="form-control ml-3" placelholder="Fecha del Dia" name="fechaDia" value="{{old('fechaDia')}}">
+        <input type="date"  class="form-control ml-3" placelholder="Fecha del Dia" name="fechaDia" value="{{old('fechaDia')}}" required>
             <button type="submit" class="btn btn-success btn-block mt-2">Filtrar</button>
         </div>
     </form>

@@ -76,8 +76,8 @@
                 </div>
 
                 <div class="links">
-                        <a href="/ingrediente_plato/index"> Ver todos los Registros</a>
-                        <a href="/ingrediente_plato/create"> Agregar un Nuevo Registro</a>
+                        <a href="/ingrediente_plato/index">  <button class="btn btn-warning">   Ver todos los Registros </button></a>
+                        <a href="/ingrediente_plato/create"> <button class="btn btn-warning"> Agregar un Nuevo Registro </button></a>
                 </div>
             </div>
         </div>

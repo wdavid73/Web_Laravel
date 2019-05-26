@@ -24,8 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 /*---------------- Ingredientes ----------------- */
 //Ruta de Ingredientes
-Route::get('/ingredientes/index', 'IngredientesController@index');
-Route::get('/ingredientes', 'IngredientesController@principalView');
+Route::get('/home/index', 'IngredientesController@index')->name('ingredientes.index');
+Route::get('/ingredientes', 'IngredientesController@principalView')->name('ingredientes');
 
 //registro de ingrediente
 Route::get('/ingredientes/create' , 'IngredientesController@create')->name('ingrediente.create');
@@ -34,12 +34,12 @@ Route::post('/ingredientes/registrar', 'IngredientesController@store');
 Route::get('/ingredientes/{ingredientes}' , 'IngredientesController@show')->where('ingredientes' ,'[0-9]+')->name("ingredientes.show");
 //editar
 Route::get('/ingredientes/{ingredientes}/edit' , 'IngredientesController@edit')->name("ingrediente.edit");
-Route::put('/ingredientes/{ingredientes}' , 'IngredientesController@update');
+Route::put('/ingredientes/{ingredientes}' , 'IngredientesController@update')->name('ingredientes.update');
 
 /*---------------- Platos ----------------- */
 //Ruta de Platos
-Route::get('/platos/index', 'PlatosController@index');
-Route::get('/platos', 'PlatosController@principalView');
+Route::get('/platos/index', 'PlatosController@index')->name('platos.index');
+Route::get('/platos', 'PlatosController@principalView')->name('platos');
 //registro de plato
 Route::get('/platos/create' , 'PlatosController@create')->name('CrearPlato');
 Route::post('/platos/registrar', 'PlatosController@store');
@@ -47,24 +47,27 @@ Route::post('/platos/registrar', 'PlatosController@store');
 Route::get('/platos/{platos}' , 'PlatosController@show')->where('platos' ,'[0-9]+')->name("platos.show");
 //editar
 Route::get('/platos/{platos}/edit' , 'PlatosController@edit')->name("platos.edit");
-Route::put('/platos/{platos}' , 'PlatosController@update');
+Route::put('/platos/{platos}' , 'PlatosController@update')->name('platos.update');
 
 
 
 /*---------------- Ordenes ----------------- */
 //controlador de ordenes
-Route::get('/ordenes/index', 'OrdenesController@index');
-Route::get('/ordenes', 'OrdenesController@principalView');
+Route::get('/ordenes/index', 'OrdenesController@index')->name('orden.index');
+Route::get('/ordenes', 'OrdenesController@principalView')->name('orden');
 //registro de ordenes
-Route::get('/ordenes/create' , 'OrdenesController@create')->name('CrearOrden');
+Route::get('/ordenes/create' , 'OrdenesController@create')->name('create.orden');
 Route::post('/ordenes/registrar', 'OrdenesController@store');
 //mostrar detalles del plato
 Route::get('/ordenes/{ordenes}' , 'OrdenesController@show')->where('ordenes' ,'[0-9]+')->name("ordenes.show");
 //editar
 Route::get('/ordenes/{ordenes}/edit' , 'OrdenesController@edit')->name("ordenes.edit");
-Route::put('/ordenes/{ordenes}' , 'OrdenesController@update');
+Route::put('/ordenes/{ordenes}' , 'OrdenesController@update')->name('ordenes.update');
 //Listado de Ordenes del DIA
 Route::get('ordenes.list' , 'OrdenesController@list')->name('ordenes.list');
+/* ---- Cierre de Orden ---- */
+Route::get('/ordenes/buscarMesa' , 'OrdenesController@buscarMesa')->name('ordenes.buscarMesa');
+Route::post('/ordenes/cierreOrden', 'OrdenesController@cierreOrden')->name('ordenes.cierreOrden');
 
 
 /* -------------- Relaciones Muchos a Muchos --------------- */
