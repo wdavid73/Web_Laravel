@@ -63,6 +63,8 @@ Route::get('/ordenes/{ordenes}' , 'OrdenesController@show')->where('ordenes' ,'[
 //editar
 Route::get('/ordenes/{ordenes}/edit' , 'OrdenesController@edit')->name("ordenes.edit");
 Route::put('/ordenes/{ordenes}' , 'OrdenesController@update');
+//Listado de Ordenes del DIA
+Route::get('ordenes.list' , 'OrdenesController@list')->name('ordenes.list');
 
 
 /* -------------- Relaciones Muchos a Muchos --------------- */

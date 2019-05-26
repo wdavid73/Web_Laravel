@@ -39,9 +39,6 @@
                                         <a href="/ordenes/{{$orden->id}}/edit">
                                             <button class="btn btn-success">Editar</button>
                                         </a>
-                                        <a href="/ordenes/index">
-                                            <button class="btn btn-danger">Eliminar</button>
-                                        </a>
                                     </td>
                                 </tr>
                         @empty

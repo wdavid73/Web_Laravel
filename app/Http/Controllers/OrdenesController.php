@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Orden;
+use App\Models\Plato;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -21,6 +22,23 @@ class OrdenesController extends Controller
         return view('ordenes.index' , compact('ordenes'));
     }
 
+    public function principalView(){
+        return view('ordenes.ordenes');
+    }
+
+    public function list()
+    {
+        /*---- Obtencion de datos de la table ------*/
+        $ordenes = Orden::all();
+        
+       /*  $ordenes = Orden::all()->where('estado' , 'C');
+        $ordenes = Orden::all()->where('estado' , 'N'); */
+
+        $platos = Plato::all();
+        $orden_plato = DB::table('orden_plato')->get();
+
+        return view('ordenes.list' , compact( 'ordenes' , 'platos' , 'orden_plato' ));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -31,10 +49,7 @@ class OrdenesController extends Controller
         return view('ordenes.create');
     }
 
-    public function principalView(){
-        return view('ordenes.ordenes');
-    }
-
+    
     /**
      * Store a newly created resource in storage.
      *
