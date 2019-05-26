@@ -24,7 +24,7 @@ class CreateOrdenPlatoTable extends Migration
             $table->foreign('orden_id')->references('id')->on('ordenes');
             
             $table->integer('cantidad')->default('1');
-            $table->integer('valor')->default('20000');
+            $table->double('valor')->default('20000');
 
             $table->timestamps();
         });

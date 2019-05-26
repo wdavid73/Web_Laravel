@@ -12,7 +12,7 @@
 
     </head>
     <body>
-            @extends('layout') 
+            @extends('layouts.layout')   
             @section('content')
                <div class="container mt-5">
                     <h2>Todos los Registros Ingrediente - Plato</h2>

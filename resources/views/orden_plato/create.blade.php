@@ -12,7 +12,7 @@
     @section('title' , 'Orden -> Plato')
 </head>
 <body>
-    @extends('layout')
+        @extends('layouts.layout')  
 
     @section('content')
     <h1>Creacion de relacion</h1>

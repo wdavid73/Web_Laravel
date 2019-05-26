@@ -68,13 +68,22 @@
         </style>
     </head>
     <body>
-            @extends('layout')
+            @extends('layouts.layout')  
             @section('content')
             <div class="flex-center position-ref full-height">
                     <div class="content">
                         <div class="title m-b-md">
                             Proyecto Laravel
-                            <h6><strong>Estudiante : Wilson Padilla Julio</strong></h6><br>
+                            <p>
+                                <h6><strong>Estudiante : Wilson Padilla Julio</strong></h6>
+                                <h6><strong>Bienvenid@  {{ auth()->user()->name }}</strong></h6>
+                            </p>
+                        </div>
+                        <div>
+                            <form action="{{ route('logout') }}" method="POST">
+                                {{ csrf_field() }}
+                                <button class="btn btn-danger mb-3 ">Cerrar Sesion</button>
+                            </form> 
                         </div>
                         <div class="links"> 
                             <a href="https://github.com/wdavid73/Web_Laravel">Repositorio del Proyecto</a>

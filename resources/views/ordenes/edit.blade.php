@@ -12,7 +12,7 @@
 
     </head>
     <body>     
-    @extends('layout')    
+            @extends('layouts.layout')   
             @section('content')
                <div class="container mt-5">
                     <h1>Editar Datos Basico de la Orden</h1>

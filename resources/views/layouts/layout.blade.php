@@ -17,7 +17,7 @@
     
         <ul class="nav nav-tabs text-dark justify-content-center">
             <li class="nav-item ">
-                <a href="/" class="nav-link active">Home</a>
+                <a href="/home" class="nav-link active">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="/ingredientes">Ingredientes</a>

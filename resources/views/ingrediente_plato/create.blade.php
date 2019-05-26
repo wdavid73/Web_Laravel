@@ -13,7 +13,7 @@
 
 </head>
 <body>
-        @extends('layout')    
+        @extends('layouts.layout')    
 
         @section('content')
             <h1>Relacionar Ingrediente con Plato</h1>

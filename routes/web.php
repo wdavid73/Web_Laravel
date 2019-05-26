@@ -11,10 +11,14 @@ use App\Http\Controllers\IngredientesController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*--------------- LOGIN --------------- */
+Route::get('/', 'Auth\LoginController@showLoginForm')->middleware('guest');
 
-Route::get('/', function () {
-    return view('home');
-})->name('Home');
+Route::post('login' ,'Auth\LoginController@login')->name("login");
+Route::post('logout' ,'Auth\LoginController@logout')->name("logout");
+
+/* -------  Home ----------- */
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 
@@ -62,7 +66,7 @@ Route::put('/ordenes/{ordenes}' , 'OrdenesController@update');
 
 
 /* -------------- Relaciones Muchos a Muchos --------------- */
-//FIXME:: Arregar Index
+
 /* ------------- Relacion Ingrediente - Plato --------------------*/
 Route::get('/ingrediente_plato/index' , 'IngredientePlatoController@index')->name('ingrediente_plato.index');
 Route::get('/ingrediente_plato', 'IngredientePlatoController@principalView');
@@ -76,3 +80,5 @@ Route::get('/orden_plato', 'OrdenPlatoController@principalView');
 /*Registrar relacion en la base de datos*/
 Route::get('/orden_plato/create' , 'OrdenPlatoController@create')->name('orden_plato.create');
 Route::post('/orden_plato/registrar', 'OrdenPlatoController@store');
+
+
