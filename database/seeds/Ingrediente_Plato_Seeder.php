@@ -15,6 +15,7 @@ class Ingrediente_Plato_Seeder extends Seeder
 
         $ingredienteId = DB::table('ingredientes')->select('id')->first();
         $platoId = DB::table('platos')->select('id')->first();
+        $ingrediente_platoId = DB::table('ingrediente_plato')->select('id')->first();
 
         DB::table('ingrediente_plato')->insert([
             'ingrediente_id' => $ingredienteId->id,

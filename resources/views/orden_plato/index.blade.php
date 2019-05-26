@@ -86,6 +86,7 @@
                 </tbody>
             </table>
             
+            <a class="ml-5" href="{{url('/orden_plato/create')}}"><button class="btn btn-success mt-2">Orden -> Plato</button></a>
             <a class="ml-5" href="{{url('/ordenes/index')}}"><button class="btn btn-success mt-2">Volver a Registro de Ordenes</button></a>
             <a class="ml-5" href="{{url('/platos/index')}}"><button class="btn btn-success mt-2">Volver a Registro de Platos</button></a>
         </div>

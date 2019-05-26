@@ -26,18 +26,19 @@ class OrdenesController extends Controller
         return view('ordenes.ordenes');
     }
 
-    public function list()
+    public function list(Request $request)
     {
+        $data = $request->all();
+        
         /*---- Obtencion de datos de la table ------*/
         $ordenes = Orden::all();
-        
        /*  $ordenes = Orden::all()->where('estado' , 'C');
         $ordenes = Orden::all()->where('estado' , 'N'); */
 
         $platos = Plato::all();
         $orden_plato = DB::table('orden_plato')->get();
 
-        return view('ordenes.list' , compact( 'ordenes' , 'platos' , 'orden_plato' ));
+        return view('ordenes.list' , compact( 'ordenes' , 'platos' , 'orden_plato' , 'data'));
     }
     /**
      * Show the form for creating a new resource.
@@ -72,20 +73,15 @@ class OrdenesController extends Controller
                 'numMesa_orden' => 'el Campo numero de mesa es obligatorio',
             ])->withInput();
         }
-        if(empty($data['select_estado'])) {
-            return redirect('/ordenes/create')->withErrors([
-                'numMesa_orden' => 'el Campo numero de mesa es obligatorio',
-            ])->withInput();
-        }
         
         //mandar datos a la base de datos
         Orden::create([
             'fecha' => $data['fecha_orden'],
             'numMesa' =>$data['numMesa_orden'],
-            'estado' => $data['select_estado']
+            'estado' => 'N'
         ]);
 
-        return redirect('/ordenes/index');
+        return redirect('/ordenes/index')->withInput();
     }
 
     /**

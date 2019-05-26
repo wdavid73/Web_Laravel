@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
         $this->truncateTables([
             'ingredientes',
             'platos',
-            'ordenes'
+            'ordenes',
+            'users'
         ]);
 
         // $this->call(UsersTableSeeder::class);
@@ -24,6 +25,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(Ingrediente_Plato_Seeder::class);
         $this->call(Orden_Plato_Seeder::class);
+
+        $this->call(UserSeeder::class);
     }
 
     protected function truncateTables(array $tables)
