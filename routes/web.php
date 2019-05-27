@@ -66,8 +66,11 @@ Route::put('/ordenes/{ordenes}' , 'OrdenesController@update')->name('ordenes.upd
 //Listado de Ordenes del DIA
 Route::get('ordenes.list' , 'OrdenesController@list')->name('ordenes.list');
 /* ---- Cierre de Orden ---- */
-Route::get('/ordenes/buscarMesa' , 'OrdenesController@buscarMesa')->name('ordenes.buscarMesa');
-Route::post('/ordenes/cierreOrden', 'OrdenesController@cierreOrden')->name('ordenes.cierreOrden');
+ Route::get('/ordenes/buscarMesa' , 'OrdenesController@buscarMesa')->name('ordenes.buscarMesa');
+ Route::get('/ordenes/info' , 'OrdenesController@info')->name('ordenes.info');
+ /*
+Route::get('/ordenes/cierre/{ordenes}' , 'OrdenesController@informacion')->where('ordenes' ,'[0-9]+')->name("ordenes.informacion");
+Route::post('/ordenes/cierreOrden', 'OrdenesController@cierreOrden')->name('ordenes.cierreOrden'); */
 
 
 /* -------------- Relaciones Muchos a Muchos --------------- */

@@ -76,13 +76,18 @@
                 <div class="title m-b-md">
                     Cierre de Orden
                 </div>
-                <div class="links form-group">               
-                    <form action="{{ route('ordenes.cierreOrden')}}" method="POST">
-                        {{ csrf_field() }}
-                        <h4><strong>Numero de Mesa</strong></h4>
-                            <input type="number" class="form-control mb-1" placeholder="Numero de mesa" name="numMesa" >
+                <div class="links form-group">            
+                        {{-- <a href="/ordenes/cierre/{{$orden->id}}/edit">
+                            <button class="btn btn-success">Editar</button>
+                        </a> --}}   
+                        
+                    <form action="{{ route('ordenes.info' )}}" method="GET">
+                                    {{-- {{ csrf_field() }} --}}
+                            <h4><strong>Numero de Mesa</strong></h4>
+                            <input type="number" class="form-control mb-1" placeholder="Numero de mesa" name="numMesa" required>
                             <button type="submit" class="btn btn-primary mt-1">Buscar</button>
-                        </form>           
+                    </form>   
+                        
                 </div>
             </div>
         </div>

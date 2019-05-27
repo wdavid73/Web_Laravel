@@ -25,7 +25,10 @@ class OrdenesController extends Controller
     public function principalView(){
         return view('ordenes.ordenes');
     }
-
+    public function create()
+    {
+        return view('ordenes.create');
+    }
     public function list(Request $request)
     {
         $data = $request->all();
@@ -41,22 +44,42 @@ class OrdenesController extends Controller
         return view('ordenes.list' , compact( 'ordenes' , 'platos' , 'orden_plato' , 'data'));
     }
 
-    public function buscarMesa(Request $request)
+    public function buscarMesa()
     {
-        return view('ordenes.buscarMesa');
+        $ordenes = Orden::all();
+        //$ordenes = DB::table('ordenes')->get();
+        return view('/ordenes/buscarMesa');
     }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+
+    public function show(Orden $ordenes)
     {
-        return view('ordenes.create');
+        return view('/ordenes/show' , compact('ordenes'));
+    }
+   
+    public function info(Request $request)
+    {
+        $data = $request['numMesa'];
+        
+        $platos = Plato::all();
+        /* dd($platos); */
+        $ordenes = Orden::all();
+        /* dd($ordenes); */
+
+        $orden_plato = DB::table('orden_plato')->get();
+        /* dd($orden_plato); */
+        
+        return view('/ordenes/info' , compact( 'ordenes' , 'platos' , 'orden_plato' , 'data'));
     }
 
-    public function cierreOrden(Request $request){
-        return $request->all();
+    public function cierreOrden(Request $request)
+    {
+        $request->all();
+        return redirect('/ordenes/index');
     }
 
     
@@ -99,10 +122,7 @@ class OrdenesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Orden $ordenes)
-    {
-        return view('/ordenes/show' , compact('ordenes'));
-    }
+    
 
     /**
      * Show the form for editing the specified resource.
