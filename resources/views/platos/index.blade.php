@@ -37,9 +37,6 @@
                                         <a href="/platos/{{$plato->id}}/edit">
                                             <button class="btn btn-success">Editar</button>
                                         </a>
-                                        <a href="/platos">
-                                            <button class="btn btn-danger">Eliminar</button>
-                                        </a>
                                     </td>
                                 </tr>
                         @empty

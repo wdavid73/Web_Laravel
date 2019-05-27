@@ -39,9 +39,6 @@
                                 <a href="/ingredientes/{{$ingrediente->id}}/edit">
                                     <button class="btn btn-success">Editar</button>
                                 </a>
-                                <a href="/ingredientes/index">
-                                    <button class="btn btn-danger">Eliminar</button>
-                                </a>
                             </td>
                             </tr>
                         @empty
